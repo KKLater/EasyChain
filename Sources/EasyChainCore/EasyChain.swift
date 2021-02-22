@@ -13,6 +13,27 @@ public extension EasyChain {
         closure(wrapper)
         return self
     }
+    
+    var print: Self {
+        Swift.print(self)
+        return self
+    }
+    
+    var printWrapper: Self {
+        Swift.print(wrapper)
+        return self
+    }
+    
+    var debugPrint: Self {
+        Swift.debugPrint("⛓⛓⛓⛓⛓⛓⛓ EasyChain DebugPrint", self)
+        Swift.debugPrint("⛓⛓⛓⛓⛓⛓⛓ EasyChain Wrapper Value", wrapper)
+        return self
+    }
+    
+    var debugPrintWrapper: Self {
+        Swift.debugPrint("⛓⛓⛓⛓⛓⛓⛓ EasyChain Wrapper Value", wrapper)
+        return self
+    }
 }
 
 public protocol EasyChainCompatible {}
