@@ -11,144 +11,87 @@ import EasyChainCore
 extension EasyChain where Base: UILabel {
 
 
-    @discardableResult
-    func text(_ text: String) -> Self {
-        return make { (label) in
-            label.text = text
-        }
+    @discardableResult func text(_ text: String) -> Self {
+        make { $0.text = text }
     }
     
-    @discardableResult
-    func font(_ font: UIFont) -> Self {
-        return make { (label) in
-            label.font = font
-        }
+    @discardableResult func font(_ font: UIFont) -> Self {
+        make { $0.font = font }
     }
     
-    @discardableResult
-    func systemFont(ofSize fontSize: CGFloat) -> Self {
-        return make { $0.font = UIFont.systemFont(ofSize: fontSize) }
+    @discardableResult func systemFont(ofSize fontSize: CGFloat) -> Self {
+        make { $0.font = UIFont.systemFont(ofSize: fontSize) }
     }
 
     @available(iOS 8.2, *)
-    @discardableResult
-    func systemFont(ofSize fontSize: CGFloat, weight: UIFont.Weight) -> Self {
-        return make { $0.font = UIFont.systemFont(ofSize: fontSize, weight: weight)
-        }
+    @discardableResult func systemFont(ofSize fontSize: CGFloat, weight: UIFont.Weight) -> Self {
+        make { $0.font = UIFont.systemFont(ofSize: fontSize, weight: weight) }
     }
     
-    @discardableResult
-    func textColor(_ textColor: UIColor) -> Self {
-        return make { (label) in
-            label.textColor = textColor
-        }
+    @discardableResult func textColor(_ textColor: UIColor) -> Self {
+        make { $0.textColor = textColor }
     }
     
-    @discardableResult
-    func shadowColor(_ shadowColor: UIColor) -> Self {
-        return make { (label) in
-            label.shadowColor = shadowColor
-        }
+    @discardableResult func shadowColor(_ shadowColor: UIColor) -> Self {
+        make { $0.shadowColor = shadowColor }
     }
     
-    @discardableResult
-    func shadowOffset(_ shadowOffset: CGSize) -> Self {
-        return make { (label) in
-            label.shadowOffset = shadowOffset
-        }
+    @discardableResult func shadowOffset(_ shadowOffset: CGSize) -> Self {
+        make { $0.shadowOffset = shadowOffset }
     }
     
-    @discardableResult
-    func textAlignment(_ textAlignment: NSTextAlignment) -> Self {
-        return make { (label) in
-            label.textAlignment = textAlignment
-        }
+    @discardableResult func textAlignment(_ textAlignment: NSTextAlignment) -> Self {
+        make { $0.textAlignment = textAlignment }
     }
     
-    @discardableResult
-    func lineBreakMode(_ lineBreakMode: NSLineBreakMode) -> Self {
-        return make { (label) in
-            label.lineBreakMode = lineBreakMode
-        }
+    @discardableResult func lineBreakMode(_ lineBreakMode: NSLineBreakMode) -> Self {
+        make { $0.lineBreakMode = lineBreakMode }
     }
     
     @available(iOS 6.0, *)
-    @discardableResult
-    func attributedText(_ attributedText: NSAttributedString) -> Self {
-        return make { (label) in
-            label.attributedText = attributedText
-        }
+    @discardableResult func attributedText(_ attributedText: NSAttributedString) -> Self {
+        make { $0.attributedText = attributedText }
     }
     
-    @discardableResult
-    func highlightedTextColor(_ highlightedTextColor: UIColor) -> Self {
-        return make { (label) in
-            label.highlightedTextColor = highlightedTextColor
-        }
+    @discardableResult func highlightedTextColor(_ highlightedTextColor: UIColor) -> Self {
+        make { $0.highlightedTextColor = highlightedTextColor }
     }
     
-    @discardableResult
-    func isHighlighted(_ isHighlighted: Bool) -> Self {
-        return make { (label) in
-            label.isHighlighted = isHighlighted
-        }
+    @discardableResult func isHighlighted(_ isHighlighted: Bool) -> Self {
+        make { $0.isHighlighted = isHighlighted }
     }
     
-    @discardableResult
-    func isEnabled(_ isEnabled: Bool) -> Self {
-        return make { (label) in
-            label.isEnabled = isEnabled
-        }
+    @discardableResult func isEnabled(_ isEnabled: Bool) -> Self {
+        make { $0.isEnabled = isEnabled }
     }
     
-    @discardableResult
-    func numberOfLines(_ numberOfLines: Int) -> Self {
-        return make { (label) in
-            label.numberOfLines = numberOfLines
-        }
+    @discardableResult func numberOfLines(_ numberOfLines: Int) -> Self {
+        make { $0.numberOfLines = numberOfLines }
     }
     
-    @discardableResult
-    func adjustsFontSizeToFitWidth(_ adjustsFontSizeToFitWidth: Bool) -> Self {
-        return make { (label) in
-            label.adjustsFontSizeToFitWidth = adjustsFontSizeToFitWidth
-        }
+    @discardableResult func adjustsFontSizeToFitWidth(_ adjustsFontSizeToFitWidth: Bool) -> Self {
+        make { $0.adjustsFontSizeToFitWidth = adjustsFontSizeToFitWidth }
     }
     
-    @discardableResult
-    func baselineAdjustment(_ baselineAdjustment: UIBaselineAdjustment) -> Self {
-        return make { (label) in
-            label.baselineAdjustment = baselineAdjustment
-        }
+    @discardableResult func baselineAdjustment(_ baselineAdjustment: UIBaselineAdjustment) -> Self {
+        make { $0.baselineAdjustment = baselineAdjustment }
     }
     
-    @discardableResult
-    func minimumScaleFactor(_ minimumScaleFactor: CGFloat) -> Self {
-        return make { (label) in
-            label.minimumScaleFactor = minimumScaleFactor
-        }
+    @discardableResult func minimumScaleFactor(_ minimumScaleFactor: CGFloat) -> Self {
+        make { $0.minimumScaleFactor = minimumScaleFactor }
     }
     
     @available(iOS 9.0, *)
-    @discardableResult
-    func allowsDefaultTighteningForTruncation(_ allowsDefaultTighteningForTruncation: Bool) -> Self {
-        return make { (label) in
-            label.allowsDefaultTighteningForTruncation = allowsDefaultTighteningForTruncation
-        }
+    @discardableResult func allowsDefaultTighteningForTruncation(_ allowsDefaultTighteningForTruncation: Bool) -> Self {
+        make { $0.allowsDefaultTighteningForTruncation = allowsDefaultTighteningForTruncation }
     }
     
-    @discardableResult
-    func lineBreakStrategy(_ lineBreakStrategy: NSParagraphStyle.LineBreakStrategy) -> Self {
-        return make { (label) in
-            label.lineBreakStrategy = lineBreakStrategy
-        }
+    @discardableResult func lineBreakStrategy(_ lineBreakStrategy: NSParagraphStyle.LineBreakStrategy) -> Self {
+        make { $0.lineBreakStrategy = lineBreakStrategy }
     }
     
-    @discardableResult
-    func preferredMaxLayoutWidth(_ preferredMaxLayoutWidth: CGFloat) -> Self {
-        return make { (label) in
-            label.preferredMaxLayoutWidth = preferredMaxLayoutWidth
-        }
+    @discardableResult func preferredMaxLayoutWidth(_ preferredMaxLayoutWidth: CGFloat) -> Self {
+        make { $0.preferredMaxLayoutWidth = preferredMaxLayoutWidth }
     }
 }
 

@@ -8,84 +8,59 @@
 import UIKit
 import EasyChainCore
 
-extension EasyChain where Base: UIControl {
+public extension EasyChain where Base: UIControl {
 
-    func enabled(_ enabled: Bool) -> Self {
-        return make { (ct) in
-            ct.isEnabled = enabled
-        }
+    @discardableResult func enabled(_ enabled: Bool) -> Self {
+        make { $0.isEnabled = enabled }
     }
     
-    func selected(_ selected: Bool) -> Self {
-        return make { (ct) in
-            ct.isSelected = selected
-        }
+    @discardableResult func selected(_ selected: Bool) -> Self {
+        make { $0.isSelected = selected }
     }
     
-    func highlighted(_ highlighted: Bool) -> Self {
-        return make { (ct) in
-            ct.isHighlighted = highlighted
-        }
+    @discardableResult func highlighted(_ highlighted: Bool) -> Self {
+        make { $0.isHighlighted = highlighted }
     }
     
-    func contentVerticalAlignment(_ contentVerticalAlignment: UIControl.ContentVerticalAlignment) -> Self {
-        return make { (ct) in
-            ct.contentVerticalAlignment = contentVerticalAlignment
-        }
+    @discardableResult func contentVerticalAlignment(_ contentVerticalAlignment: UIControl.ContentVerticalAlignment) -> Self {
+        make { $0.contentVerticalAlignment = contentVerticalAlignment }
     }
     
-    
-    func contentHorizontalAlignment(_ contentHorizontalAlignment: UIControl.ContentHorizontalAlignment) -> Self {
-        return make { (ct) in
-            ct.contentHorizontalAlignment = contentHorizontalAlignment
-        }
+    @discardableResult func contentHorizontalAlignment(_ contentHorizontalAlignment: UIControl.ContentHorizontalAlignment) -> Self {
+        make { $0.contentHorizontalAlignment = contentHorizontalAlignment }
     }
     
-    func addTarget(_ target: Any?, action: Selector, for controlEvents: UIControl.Event) -> Self {
-        return make { (ct) in
-            ct.addTarget(target, action: action, for: controlEvents)
-        }
+    @discardableResult func addTarget(_ target: Any?, action: Selector, for controlEvents: UIControl.Event) -> Self {
+        make { $0.addTarget(target, action: action, for: controlEvents) }
     }
     
-   func removeTarget(_ target: Any?, action: Selector?, for controlEvents: UIControl.Event) -> Self {
-        return make { (ct) in
-            ct.removeTarget(target, action: action, for: controlEvents)
-        }
+    @discardableResult func removeTarget(_ target: Any?, action: Selector?, for controlEvents: UIControl.Event) -> Self {
+        make { $0.removeTarget(target, action: action, for: controlEvents) }
     }
     
     @available(iOS 14, *)
-    func addAction(_ action: UIAction, for controlEvents: UIControl.Event) -> Self {
-        return make { (ct) in
-            ct.addAction(action, for: controlEvents)
-        }
+    @discardableResult func addAction(_ action: UIAction, for controlEvents: UIControl.Event) -> Self {
+        make { $0.addAction(action, for: controlEvents) }
     }
 
     @available(iOS 14.0, *)
-    func removeAction(_ action: UIAction, for controlEvents: UIControl.Event) -> Self {
-        return make { (ct) in
-            ct.removeAction(action, for: controlEvents)
-        }
+    @discardableResult func removeAction(_ action: UIAction, for controlEvents: UIControl.Event) -> Self {
+        make { $0.removeAction(action, for: controlEvents) }
     }
     
     @available(iOS 14.0, *)
-    func removeAction(identifiedBy actionIdentifier: UIAction.Identifier, for controlEvents: UIControl.Event) -> Self {
-        return make { (ct) in
-            ct.removeAction(identifiedBy: actionIdentifier, for: controlEvents)
-        }
+    @discardableResult func removeAction(identifiedBy actionIdentifier: UIAction.Identifier, for controlEvents: UIControl.Event) -> Self {
+        make { $0.removeAction(identifiedBy: actionIdentifier, for: controlEvents) }
     }
 
     @available(iOS 14.0, *)
-    func contextMenuInteractionEnabled(_ contextMenuInteractionEnabled: Bool) -> Self {
-        return make { (ct) in
-            ct.isContextMenuInteractionEnabled = contextMenuInteractionEnabled
-        }
+    @discardableResult func contextMenuInteractionEnabled(_ contextMenuInteractionEnabled: Bool) -> Self {
+        make { $0.isContextMenuInteractionEnabled = contextMenuInteractionEnabled }
     }
     
     @available(iOS 14.0, *)
-    func showsMenuAsPrimaryAction(_ showsMenuAsPrimaryAction: Bool) -> Self {
-        return make { (ct) in
-            ct.showsMenuAsPrimaryAction = showsMenuAsPrimaryAction
-        }
+    @discardableResult func showsMenuAsPrimaryAction(_ showsMenuAsPrimaryAction: Bool) -> Self {
+        make { $0.showsMenuAsPrimaryAction = showsMenuAsPrimaryAction }
     }
 }
 

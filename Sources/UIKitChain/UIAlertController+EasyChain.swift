@@ -15,29 +15,24 @@ extension UIAlertController {
 }
 public extension EasyChain where Base: UIAlertController {
     
-    @discardableResult
-    func addAction(_ action: UIAlertAction) -> Self {
+    @discardableResult func addAction(_ action: UIAlertAction) -> Self {
         return make { $0.addAction(action) }
     }
 
     @available(iOS 9.0, *)
-    @discardableResult
-    func preferredAction(_ preferredAction: UIAlertAction?) -> Self {
+    @discardableResult func preferredAction(_ preferredAction: UIAlertAction?) -> Self {
         return make { $0.preferredAction = preferredAction }
     }
     
-    @discardableResult
-    func addTextField(configurationHandler: ((UITextField) -> Void)? = nil) -> Self {
+    @discardableResult func addTextField(configurationHandler: ((UITextField) -> Void)? = nil) -> Self {
         return make { $0.addTextField(configurationHandler: configurationHandler) }
     }
     
-    @discardableResult
-    func title(_ title: String?) -> Self {
+    @discardableResult func title(_ title: String?) -> Self {
         return make { $0.title = title }
     }
 
-    @discardableResult
-    func message(_ message: String?) -> Self {
+    @discardableResult func message(_ message: String?) -> Self {
         return make { $0.message = message }
     }
 }
@@ -64,18 +59,15 @@ public extension UIAlertAction {
 extension UIAlertAction: EasyChainCompatible {}
 extension EasyChain where Base: UIAlertAction {
 
-    @discardableResult
-    func title(_ title: String) -> Self {
+ @discardableResult func title(_ title: String) -> Self {
         return make { $0.wrapper.title = title }
     }
     
-    @discardableResult
-    func style(_ style: UIAlertAction.Style) -> Self {
+    @discardableResult func style(_ style: UIAlertAction.Style) -> Self {
         return make { $0.wrapper.style = style }
     }
     
-    @discardableResult
-    func handle(_ handler: ((UIAlertAction) -> Void)?) -> Self {
+    @discardableResult func handle(_ handler: ((UIAlertAction) -> Void)?) -> Self {
         return make { $0.wrapper.handler = handler }
     }
     
