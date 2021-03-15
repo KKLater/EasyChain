@@ -10,7 +10,7 @@ import EasyChainCore
 
 extension UIView: EasyChainCompatible {}
 
-extension EasyChain where Base: UIView {
+public extension EasyChain where Base: UIView {
     
     @discardableResult func isUserInteractionEnabled(_ isUserInteractionEnabled: Bool) -> Self {
         make { $0.isUserInteractionEnabled = isUserInteractionEnabled }
