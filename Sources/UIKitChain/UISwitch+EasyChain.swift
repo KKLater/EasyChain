@@ -8,7 +8,7 @@
 import UIKit
 import EasyChainCore
 
-extension EasyChain where Base: UISwitch {
+public extension EasyChain where Base: UISwitch {
     
     @available(iOS 5.0, *)
     @discardableResult func onTintColor(_ onTintColor: UIColor?) -> Self {

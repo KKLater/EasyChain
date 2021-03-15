@@ -57,7 +57,7 @@ public extension UIAlertAction {
 }
 
 extension UIAlertAction: EasyChainCompatible {}
-extension EasyChain where Base: UIAlertAction {
+public extension EasyChain where Base: UIAlertAction {
 
  @discardableResult func title(_ title: String) -> Self {
         return make { $0.wrapper.title = title }

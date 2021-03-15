@@ -8,7 +8,7 @@
 import UIKit
 import EasyChainCore
 
-extension EasyChain where Base: UICollectionView {
+public extension EasyChain where Base: UICollectionView {
 
     @discardableResult func collectionViewLayout(_ collectionViewLayout: UICollectionViewLayout) -> Self {
         return make { $0.collectionViewLayout = collectionViewLayout }

@@ -8,7 +8,7 @@
 import UIKit
 import EasyChainCore
 
-extension EasyChain where Base: UIScrollView {
+public extension EasyChain where Base: UIScrollView {
     
     @discardableResult func contentOffset(_ contentOffset: CGPoint) -> Self {
         make { $0.contentOffset = contentOffset }

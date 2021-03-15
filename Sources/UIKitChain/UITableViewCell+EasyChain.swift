@@ -8,7 +8,7 @@
 import UIKit
 import EasyChainCore
 
-extension EasyChain where Base: UITableViewCell {
+public extension EasyChain where Base: UITableViewCell {
     
     @available(iOS 14.0, *)
     @discardableResult func setNeedsUpdateConfiguration() -> Self {

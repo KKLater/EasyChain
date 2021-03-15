@@ -8,7 +8,7 @@
 import UIKit
 import EasyChainCore
 
-extension EasyChain where Base: UITableView {
+public extension EasyChain where Base: UITableView {
     
     @discardableResult func dataSource(_ dataSource: UITableViewDataSource?) -> Self {
         make { $0.dataSource = dataSource }

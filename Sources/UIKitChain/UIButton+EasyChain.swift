@@ -8,7 +8,7 @@
 import UIKit
 import EasyChainCore
 
-extension EasyChain where Base: UIButton {
+public extension EasyChain where Base: UIButton {
 
     @discardableResult func contentEdgeInsets(_ contentEdgeInsets: UIEdgeInsets) -> Self {
         return make { $0.contentEdgeInsets = contentEdgeInsets }

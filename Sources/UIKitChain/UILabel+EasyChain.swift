@@ -8,7 +8,7 @@
 import UIKit
 import EasyChainCore
 
-extension EasyChain where Base: UILabel {
+public extension EasyChain where Base: UILabel {
 
 
     @discardableResult func text(_ text: String) -> Self {

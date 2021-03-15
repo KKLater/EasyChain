@@ -8,7 +8,7 @@
 import UIKit
 import EasyChainCore
 
-extension EasyChain where Base: UISlider {
+public extension EasyChain where Base: UISlider {
     
     @discardableResult func value(_ value: Float) -> Self {
         make { $0.value = value }

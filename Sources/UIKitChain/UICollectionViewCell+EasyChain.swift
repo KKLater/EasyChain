@@ -8,7 +8,7 @@
 import UIKit
 import EasyChainCore
 
-extension EasyChain where Base: UICollectionViewCell {
+public extension EasyChain where Base: UICollectionViewCell {
 
     @available(iOS 14.0, *)
     @discardableResult func setNeedsUpdateConfiguration() -> Self {
