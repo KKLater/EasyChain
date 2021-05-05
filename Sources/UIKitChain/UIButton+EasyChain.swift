@@ -43,6 +43,10 @@ public extension EasyChain where Base: UIButton {
         return make { $0.tintColor = tintColor }
     }
     
+    @discardableResult func font(_ font: UIFont) -> Self {
+        return make { $0.titleLabel?.font = font }
+    }
+    
     @available(iOS 14.0, *)
     @discardableResult func role(_ role: UIButton.Role) -> Self {
         return make { $0.role = role }
