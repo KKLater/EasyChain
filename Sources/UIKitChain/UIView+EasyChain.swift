@@ -536,6 +536,39 @@ public extension EasyChain where Base: UIView {
         make { $0.layer.cornerRadius = cornerRadius }
     }
     
+    @discardableResult func mask(_ mask: CALayer?) -> Self {
+        make { $0.layer.mask = mask }
+    }
+    
+    @discardableResult func masksToBounds(_ masksToBounds: Bool) -> Self {
+        make { $0.layer.masksToBounds = masksToBounds }
+    }
+    
+    @available(iOS 11.0, *)
+    @discardableResult func maskedCorners(_ maskedCorners: CACornerMask) -> Self {
+        make { $0.layer.maskedCorners = maskedCorners }
+    }
+    
+    @discardableResult func borderWidth(_ borderWidth: CGFloat) -> Self {
+        make { $0.layer.borderWidth = borderWidth }
+    }
+
+    @discardableResult func borderColor(_ borderColor: UIColor?) -> Self {
+        make { $0.layer.borderColor = borderColor?.cgColor }
+    }
+
+    @discardableResult func borderColor(_ borderColor: CGColor?) -> Self {
+        make { $0.layer.borderColor = borderColor }
+    }
+
+    @discardableResult func opacity(_ opacity: Float) -> Self {
+        make { $0.layer.opacity = opacity }
+    }
+
+    @discardableResult func allowsGroupOpacity(_ allowsGroupOpacity: Bool) -> Self {
+        make { $0.layer.allowsGroupOpacity = allowsGroupOpacity }
+    }
+    
     @discardableResult func shadowColor(_ shadowColor: UIColor, alpha: CGFloat? = nil) -> Self {
         return make { (view) in
             if let alpha = alpha {
