@@ -47,6 +47,15 @@ public extension EasyChain where Base: UIButton {
         return make { $0.titleLabel?.font = font }
     }
     
+    @discardableResult func systemFont(ofSize fontSize: CGFloat) -> Self {
+        make { $0.titleLabel?.font = UIFont.systemFont(ofSize: fontSize) }
+    }
+
+    @available(iOS 8.2, *)
+    @discardableResult func systemFont(ofSize fontSize: CGFloat, weight: UIFont.Weight) -> Self {
+        make { $0.titleLabel?.font = UIFont.systemFont(ofSize: fontSize, weight: weight) }
+    }
+    
     @available(iOS 14.0, *)
     @discardableResult func role(_ role: UIButton.Role) -> Self {
         return make { $0.role = role }
