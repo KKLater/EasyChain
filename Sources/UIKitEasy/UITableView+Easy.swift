@@ -7,19 +7,17 @@
 
 import UIKit
 
-extension UITableView: EasyCompatible {}
-
 public extension Easy where Base: UITableView {
        
-    func register(cellClass: UITableViewCell.Type) {
+    func register<T: UITableViewCell>(cellClass: T.Type) {
         wrapper.register(cellClass, forCellReuseIdentifier: cellClass.easy.reuseIdentifier)
     }
     
-    func register(nib: UINib?, for cellClass: UITableViewCell.Type) {
+    func register<T: UITableViewCell>(nib: UINib?, for cellClass: T.Type) {
         wrapper.register(nib, forCellReuseIdentifier: cellClass.easy.reuseIdentifier)
     }
     
-    func dequeueReusableCell<T: UITableViewCell>(cellClass: UITableViewCell.Type?, for indexPath: IndexPath? = nil) -> T? {
+    func dequeueReusableCell<T: UITableViewCell>(cellClass: T.Type?, for indexPath: IndexPath? = nil) -> T? {
         guard let cls = cellClass else { return nil }
         if let indexPath = indexPath {
             return wrapper.dequeueReusableCell(withIdentifier: cls.easy.reuseIdentifier, for: indexPath) as? T
