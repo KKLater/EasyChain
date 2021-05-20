@@ -12,7 +12,7 @@ import EasyChainCore
 public extension Easy where Base: UICollectionViewCell {
 
     static var reuseIdentifier: String {
-        return "com.easy.identifier."+"\(Base.classForCoder())"
+        return "com.easy.collectionView.cell.identifier."+"\(Base.self)"
     }
     
     var reuseIdentifier: String {

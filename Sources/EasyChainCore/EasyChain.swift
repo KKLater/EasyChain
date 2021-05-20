@@ -2,7 +2,7 @@
 import Foundation
 
 /// Easy
-public struct Easy<Base> {
+public class Easy<Base> {
     public var wrapper: Base
     init(_ wrapper: Base) {
         self.wrapper = wrapper
