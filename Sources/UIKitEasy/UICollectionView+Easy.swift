@@ -9,18 +9,23 @@ import UIKit
 
 public extension Easy where Base: UICollectionView {
 
-    func register(cellClass: UICollectionViewCell.Type) {
+    func register<T: UICollectionViewCell>(cellClass: T.Type) {
         wrapper.register(cellClass, forCellWithReuseIdentifier: cellClass.easy.reuseIdentifier)
     }
     
-    func register(nib: UINib?, for cellClass: UICollectionViewCell.Type) {
+    func register<T: UICollectionViewCell>(nib: UINib?, for cellClass: T.Type) {
         wrapper.register(nib, forCellWithReuseIdentifier: cellClass.easy.reuseIdentifier)
     }
     
     func dequeueReusableCell<T: UICollectionViewCell>(cellClass: T.Type, for indexPath: IndexPath) -> T? {
-        return wrapper.dequeueReusableCell(withReuseIdentifier: cellClass.easy.reuseIdentifier, for: indexPath) as? T
+        var cell = wrapper.dequeueReusableCell(withReuseIdentifier: cellClass.easy.reuseIdentifier, for: indexPath) as? T
+        if cell == nil {
+            cell = T(frame: .zero)
+        }
+        return cell!
+        
     }
-
+  
     func numberOfItems() -> Int {
         var section = 0
         var items = 0

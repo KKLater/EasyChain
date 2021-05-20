@@ -17,12 +17,20 @@ public extension Easy where Base: UITableView {
         wrapper.register(nib, forCellReuseIdentifier: cellClass.easy.reuseIdentifier)
     }
     
-    func dequeueReusableCell<T: UITableViewCell>(cellClass: T.Type?, for indexPath: IndexPath? = nil) -> T? {
-        guard let cls = cellClass else { return nil }
+    func dequeueReusableCell<T: UITableViewCell>(cellClass: T.Type, for indexPath: IndexPath? = nil) -> T {
         if let indexPath = indexPath {
-            return wrapper.dequeueReusableCell(withIdentifier: cls.easy.reuseIdentifier, for: indexPath) as? T
+            var cell = wrapper.dequeueReusableCell(withIdentifier: cellClass.easy.reuseIdentifier, for: indexPath) as? T
+            if cell == nil {
+                cell = cellClass.init(style: .default, reuseIdentifier: cellClass.easy.reuseIdentifier)
+            }
+            return cell!
         } else {
-            return wrapper.dequeueReusableCell(withIdentifier: cls.easy.reuseIdentifier) as? T
+            var cell = wrapper.dequeueReusableCell(withIdentifier: cellClass.easy.reuseIdentifier) as? T
+            if cell == nil {
+                cell = cellClass.init(style: .default, reuseIdentifier: cellClass.easy.reuseIdentifier)
+            }
+            
+            return cell!
         }
     }
     
