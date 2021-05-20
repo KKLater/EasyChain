@@ -31,7 +31,7 @@ final class EasyChainTests: XCTestCase {
         view.chain.backgroundColor(.black)
         
         print(Cell.es.reuseIdentifier)
-        
+                
         UIView.chain.animate(withDuration: 0.1, delay: 0.1) {
             print("a")
         }.animate(withDuration: 0.2, delay: 0.4) {
