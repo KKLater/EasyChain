@@ -8,7 +8,7 @@
 import UIKit
 import EasyChainCore
 
-public extension EasyChain where Base: UITextView {
+public extension Chain where Base: UITextView {
 
     @discardableResult func delegate(_ delegate: UITextViewDelegate?) -> Self {
         make { $0.delegate = delegate }

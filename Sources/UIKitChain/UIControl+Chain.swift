@@ -8,7 +8,7 @@
 import UIKit
 import EasyChainCore
 
-public extension EasyChain where Base: UIControl {
+public extension Chain where Base: UIControl {
 
     @discardableResult func enabled(_ enabled: Bool) -> Self {
         make { $0.isEnabled = enabled }

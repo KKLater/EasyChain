@@ -7,8 +7,9 @@
 
 import UIKit
 import EasyChainCore
+import UIKitEasy
 
-public extension EasyChain where Base: UITableView {
+public extension Chain where Base: UITableView {
     
     @discardableResult func dataSource(_ dataSource: UITableViewDataSource?) -> Self {
         make { $0.dataSource = dataSource }
@@ -251,7 +252,13 @@ public extension EasyChain where Base: UITableView {
     @discardableResult func register(_ cellClass: AnyClass?, forCellReuseIdentifier identifier: String) -> Self {
         make { $0.register(cellClass, forCellReuseIdentifier: identifier) }
     }
-
+    
+    @available(iOS 6.0, *)
+    @discardableResult func register(_ cellClass: UITableViewCell.Type) -> Self {
+        make {
+            $0.register(cellClass, forCellReuseIdentifier: cellClass.es.reuseIdentifier)
+        }
+    }
     
     @available(iOS 6.0, *)
     @discardableResult func register(_ nib: UINib?, forHeaderFooterViewReuseIdentifier identifier: String) -> Self {

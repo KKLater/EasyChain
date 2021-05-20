@@ -9,7 +9,7 @@ import WebKit
 import EasyChainCore
 import UIKitChain
 
-public extension EasyChain where Base: WKWebView {
+public extension Chain where Base: WKWebView {
     
     @discardableResult
     func navigationDelegate(_ navigationDelegate: WKNavigationDelegate?) -> Self {
@@ -143,7 +143,7 @@ public extension EasyChain where Base: WKWebView {
 }
 
 @available(iOS 14.0, macOS 11.0, *)
-public extension EasyChain where Base: WKWebView {
+public extension Chain where Base: WKWebView {
 
     @discardableResult
     func callAsyncJavaScript(_ functionBody: String, arguments: [String : Any] = [:], in frame: WKFrameInfo? = nil, in contentWorld: WKContentWorld, completionHandler: ((Result<Any, Error>) -> Void)? = nil) -> Self {

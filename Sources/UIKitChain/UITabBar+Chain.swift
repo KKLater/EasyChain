@@ -8,7 +8,7 @@
 import UIKit
 import EasyChainCore
 
-public extension EasyChain where Base: UITabBar {
+public extension Chain where Base: UITabBar {
 
     @discardableResult func delegate(_ delegate: UITabBarDelegate?) -> Self {
         make { $0.delegate = delegate }

@@ -9,7 +9,7 @@
 import UIKit
 import EasyChainCore
 
-public extension EasyChain where Base: UIImageView {
+public extension Chain where Base: UIImageView {
     
     @discardableResult func image(_ image: UIImage?) -> Self {
         make { $0.image = image }

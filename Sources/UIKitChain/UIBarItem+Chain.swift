@@ -9,8 +9,8 @@
 import UIKit
 import EasyChainCore
 
-extension UIBarItem: EasyChainCompatible {}
-public extension EasyChain where Base: UIBarItem {
+extension UIBarItem: ChainCompatible {}
+public extension Chain where Base: UIBarItem {
 
     @discardableResult func isEnabled(_ isEnabled: Bool) -> Self {
         return make { $0.isEnabled = isEnabled }

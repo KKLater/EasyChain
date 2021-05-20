@@ -8,7 +8,7 @@
 import UIKit
 import EasyChainCore
 
-public extension EasyChain where Base: UITabBarItem {
+public extension Chain where Base: UITabBarItem {
     
     @available(iOS 7.0, *)
     @discardableResult func selectedImage(_ selectedImage: UIImage?) -> Self {

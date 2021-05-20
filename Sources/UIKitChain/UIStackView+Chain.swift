@@ -9,7 +9,7 @@ import UIKit
 import EasyChainCore
 
 @available(iOS 9.0, *)
-public extension EasyChain where Base: UIStackView {
+public extension Chain where Base: UIStackView {
 
     @discardableResult func addArrangedSubview(_ view: UIView) -> Self {
         make { $0.addArrangedSubview(view) }

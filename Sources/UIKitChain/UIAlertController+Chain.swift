@@ -13,7 +13,7 @@ extension UIAlertController {
         self.init(title: nil, message: nil, preferredStyle: preferredStyle)
     }
 }
-public extension EasyChain where Base: UIAlertController {
+public extension Chain where Base: UIAlertController {
     
     @discardableResult func addAction(_ action: UIAlertAction) -> Self {
         return make { $0.addAction(action) }
@@ -56,8 +56,8 @@ public extension UIAlertAction {
     }
 }
 
-extension UIAlertAction: EasyChainCompatible {}
-public extension EasyChain where Base: UIAlertAction {
+extension UIAlertAction: ChainCompatible {}
+public extension Chain where Base: UIAlertAction {
 
  @discardableResult func title(_ title: String) -> Self {
         return make { $0.wrapper.title = title }

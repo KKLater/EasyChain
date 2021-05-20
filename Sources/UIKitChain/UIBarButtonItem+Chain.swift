@@ -8,7 +8,7 @@
 import UIKit
 import EasyChainCore
 
-public extension EasyChain where Base: UIBarButtonItem {
+public extension Chain where Base: UIBarButtonItem {
 
     @discardableResult func style(_ style: UIBarButtonItem.Style) -> Self {
         return make { $0.style = style }

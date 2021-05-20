@@ -8,7 +8,7 @@
 import UIKit
 import EasyChainCore
 
-public extension EasyChain where Base: UIWindow {
+public extension Chain where Base: UIWindow {
  
     @available(iOS 13.0, *)
     @discardableResult func windowScene(_ windowScene: UIWindowScene?) -> Self {

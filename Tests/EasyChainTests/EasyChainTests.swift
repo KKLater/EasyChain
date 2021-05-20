@@ -1,9 +1,15 @@
 import XCTest
 @testable import UIKitChain
+@testable import UIKitEasy
+
+
+class Cell: UITableViewCell {
+    
+}
 
 final class EasyChainTests: XCTestCase {
     func testExample() {
-        
+
         /// button
         let bt = UIButton()
             .chain
@@ -11,7 +17,7 @@ final class EasyChainTests: XCTestCase {
             .setTitleColor(.red, for: .normal)
             .titleEdgeInsets(.zero)
             .wrapper
-        
+
         let view = UIView()
             .chain
             .backgroundColor(.white)
@@ -20,9 +26,11 @@ final class EasyChainTests: XCTestCase {
             })
             .cornerRadius(4)
             .wrapper
-        
+
         view.chain.addSubview(bt)
         view.chain.backgroundColor(.black)
+        
+        print(Cell.es.reuseIdentifier)
         
         UIView.chain.animate(withDuration: 0.1, delay: 0.1) {
             print("a")

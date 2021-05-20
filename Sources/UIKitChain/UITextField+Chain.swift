@@ -9,7 +9,7 @@
 import UIKit
 import EasyChainCore
 
-public extension EasyChain where Base: UITextField {
+public extension Chain where Base: UITextField {
    
     @discardableResult func text(_ text: String?) -> Self {
         make { $0.text = text }

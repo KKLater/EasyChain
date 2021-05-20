@@ -8,13 +8,12 @@
 import UIKit
 import EasyChainCore
 
-public extension EasyChain where Base: UITableViewCell {
+public extension Chain where Base: UITableViewCell {
     
     @available(iOS 14.0, *)
     @discardableResult func setNeedsUpdateConfiguration() -> Self {
         make { $0.setNeedsUpdateConfiguration() }
     }
-
     
     @available(iOS 14.0, *)
     @discardableResult func automaticallyUpdatesContentConfiguration(_ automaticallyUpdatesContentConfiguration: Bool) -> Self {

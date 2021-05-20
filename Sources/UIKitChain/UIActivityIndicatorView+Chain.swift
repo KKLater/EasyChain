@@ -8,7 +8,7 @@
 import UIKit
 import EasyChainCore
 
-public extension EasyChain where Base: UIActivityIndicatorView {
+public extension Chain where Base: UIActivityIndicatorView {
     
     @discardableResult func style(_ style: UIActivityIndicatorView.Style) -> Self {
         return make { $0.style = style }

@@ -11,11 +11,11 @@ import QuartzCore
 import CoreGraphics
 import UIKit
 
-extension CALayer: EasyChainCompatible {
+extension CALayer: ChainCompatible {
     public typealias StyleCompatible = CALayer
 }
 
-public extension EasyChain where Base: CALayer {
+public extension Chain where Base: CALayer {
     @discardableResult func bounds(_ bounds: CGRect) -> Self {
         make { $0.bounds = bounds }
     }

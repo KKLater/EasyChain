@@ -7,8 +7,9 @@ let package = Package(
     name: "EasyChain",
     platforms: [SupportedPlatform.iOS(.v9)],
     products: [
-        .library(name: "EasyChain", targets: ["EasyChainCore", "QuartzCoreChain", "UIKitChain", "WebKitChain"]),
+        .library(name: "EasyChain", targets: ["EasyChainCore", "QuartzCoreChain", "UIKitChain", "WebKitChain", "UIKitEasy"]),
         .library(name: "UIKitChain", targets: ["UIKitChain"]),
+        .library(name: "UIKitEasy", targets: ["UIKitEasy"]),
         .library(name: "QuartzCoreChain", targets: ["QuartzCoreChain"]),
         .library(name: "WebKitChain", targets: ["WebKitChain"]),
     ],
@@ -17,9 +18,10 @@ let package = Package(
     ],
     targets: [
         .target(name: "EasyChainCore"),
-        .target(name: "UIKitChain", dependencies: ["EasyChainCore"]),
+        .target(name: "UIKitChain", dependencies: ["EasyChainCore", "UIKitEasy"]),
+        .target(name: "UIKitEasy", dependencies: ["EasyChainCore"]),
         .target(name: "QuartzCoreChain", dependencies: ["EasyChainCore"]),
         .target(name: "WebKitChain", dependencies: ["UIKitChain"]),
-        .testTarget(name: "EasyChainTests", dependencies: ["EasyChainCore", "UIKitChain", "WebKitChain"]),
+        .testTarget(name: "EasyChainTests", dependencies: ["EasyChainCore", "UIKitChain", "WebKitChain", "UIKitEasy"]),
     ]
 )

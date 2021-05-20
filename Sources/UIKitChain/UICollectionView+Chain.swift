@@ -8,7 +8,7 @@
 import UIKit
 import EasyChainCore
 
-public extension EasyChain where Base: UICollectionView {
+public extension Chain where Base: UICollectionView {
 
     @discardableResult func collectionViewLayout(_ collectionViewLayout: UICollectionViewLayout) -> Self {
         return make { $0.collectionViewLayout = collectionViewLayout }
@@ -58,6 +58,12 @@ public extension EasyChain where Base: UICollectionView {
     
     @discardableResult func register(_ cellClass: AnyClass?, forCellWithReuseIdentifier identifier: String) -> Self {
         return make { $0.register(cellClass, forCellWithReuseIdentifier: identifier) }
+    }
+    
+    @discardableResult func register(_ cellClass: UICollectionViewCell.Type) -> Self {
+        make {
+            $0.register(cellClass, forCellWithReuseIdentifier: cellClass.es.reuseIdentifier)
+        }
     }
 
     @discardableResult func register(_ nib: UINib?, forCellWithReuseIdentifier identifier: String) -> Self {

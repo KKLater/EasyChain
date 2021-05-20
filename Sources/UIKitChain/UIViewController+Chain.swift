@@ -8,8 +8,8 @@
 import UIKit
 import EasyChainCore
 
-extension UIViewController: EasyChainCompatible {}
-public extension EasyChain where Base: UIViewController {
+extension UIViewController: ChainCompatible {}
+public extension Chain where Base: UIViewController {
     
     @discardableResult func view(_ view: UIView!) -> Self {
         make { $0.view = view }
