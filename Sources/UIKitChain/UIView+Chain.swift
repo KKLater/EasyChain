@@ -7,6 +7,7 @@
 
 import UIKit
 import EasyChainCore
+import UIKitEasy
 
 extension UIView: ChainCompatible {}
 
@@ -598,4 +599,54 @@ public extension Chain where Base: UIView {
         return self
     }
 
+}
+
+public extension Chain where Base: UIView {
+
+    @discardableResult func x(_ x: CGFloat) -> Self {
+        make { $0.frame.origin.x = x }
+    }
+    
+    @discardableResult func y(_ y: CGFloat) -> Self {
+        make { $0.frame.origin.y = y }
+    }
+    
+    @discardableResult func width(_ width: CGFloat) -> Self {
+        make { $0.frame.size.width = width }
+    }
+    
+    @discardableResult func height(_ height: CGFloat) -> Self {
+        make { $0.frame.size.height = height }
+    }
+    
+    @discardableResult func origin(_ origin: CGPoint) -> Self {
+        make { $0.frame.origin = origin }
+    }
+    
+    @discardableResult func size(_ size: CGSize) -> Self {
+        make { $0.frame.size = size }
+    }
+    
+    @discardableResult func center(_ center: CGPoint) -> Self {
+        make { $0.center = center }
+    }
+    
+    @discardableResult func centerX(_ centerX: CGFloat) -> Self {
+        make { $0.center.x = centerX }
+    }
+    
+    @discardableResult func centerY(_ centerY: CGFloat) -> Self {
+        make { $0.center.y = centerY }
+    }
+}
+
+public extension Chain where Base: UIView {
+
+    @discardableResult func cornerMode(_ cornerMode: UIView.CornerMode?) -> Self {
+        make { $0.es.cornerMode = cornerMode }
+    }
+    
+    @discardableResult func shadowMode(_ shadowMode: UIView.ShadowMode?) -> Self {
+        make { $0.es.shadowMode = shadowMode }
+    }
 }
