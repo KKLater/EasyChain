@@ -6,9 +6,8 @@
 //
 
 import UIKit
-import EasyChainCore
 
-public extension EasyChainCore.Easy where Base: UICollectionView {
+public extension Easy where Base: UICollectionView {
 
     func register(cellClass: UICollectionViewCell.Type) {
         wrapper.register(cellClass, forCellWithReuseIdentifier: cellClass.easy.reuseIdentifier)

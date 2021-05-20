@@ -103,4 +103,3 @@ public extension Chain where Base: UIButton {
         return make { $0.setAttributedTitle(title, for: state) }
     }
 }
-

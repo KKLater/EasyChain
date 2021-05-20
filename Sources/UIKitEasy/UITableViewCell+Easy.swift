@@ -6,8 +6,8 @@
 //
 
 import UIKit
-import EasyChainCore
 
+extension UITableViewCell: EasyCompatible {}
 
 public extension Easy where Base: UITableViewCell {
 

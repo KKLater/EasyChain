@@ -6,8 +6,6 @@
 //
 
 import UIKit
-import EasyChainCore
-
 
 public extension Easy where Base: UICollectionViewCell {
 

@@ -6,7 +6,8 @@
 //
 
 import UIKit
-import EasyChainCore
+
+extension UIScreen: EasyCompatible {}
 
 public extension Easy where Base: UIScreen {
 

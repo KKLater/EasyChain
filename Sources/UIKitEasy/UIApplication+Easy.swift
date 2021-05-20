@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import EasyChainCore
 
 extension UIApplication: EasyCompatible {}
 

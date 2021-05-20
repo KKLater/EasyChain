@@ -8,7 +8,6 @@
 
 #if canImport(UIKit) && !os(watchOS)
 import UIKit
-import EasyChainCore
 
 protocol StateContextable {
     var state: UIControl.State {set get}
@@ -110,7 +109,7 @@ open class UIButtonStateContext:NSObject, StateContextable {
     }
 }
 
-extension EasyChainCore.Easy where Base: UIButton {
+extension Easy where Base: UIButton {
     
     public var normalStateContext: UIButtonStateContext { UIButtonStateContext(state: .normal, button: wrapper) }
     
