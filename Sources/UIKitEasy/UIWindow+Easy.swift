@@ -7,8 +7,6 @@
 
 import UIKit
 
-extension UIWindow: EasyCompatible {}
-
 public extension Easy where Base: UIWindow {
 
     var isMain: Bool {

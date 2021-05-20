@@ -19,7 +19,6 @@ public extension Easy where Base: UICollectionView {
     
     func dequeueReusableCell<T: UICollectionViewCell>(cellClass: T.Type, for indexPath: IndexPath) -> T? {
         return wrapper.dequeueReusableCell(withReuseIdentifier: cellClass.easy.reuseIdentifier, for: indexPath) as? T
-       
     }
 
     func numberOfItems() -> Int {

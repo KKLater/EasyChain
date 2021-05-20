@@ -7,8 +7,6 @@
 
 import UIKit
 
-extension UITableViewCell: EasyCompatible {}
-
 public extension Easy where Base: UITableViewCell {
 
     static var reuseIdentifier: String {

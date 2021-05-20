@@ -32,9 +32,7 @@ public extension Easy where Base: UIImage {
         let shortest = min(wrapper.size.width, wrapper.size.height)
         return clip(cornerRadius: shortest / 2, size: wrapper.size)
     }
-    
-  
-    
+        
     /// 裁切图片
     /// - Parameters:
     ///   - cornerRadius: 图片圆角
