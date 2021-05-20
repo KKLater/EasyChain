@@ -11,15 +11,15 @@ import EasyChainCore
 public extension EasyChainCore.Easy where Base: UICollectionView {
 
     func register(cellClass: UICollectionViewCell.Type) {
-        wrapper.register(cellClass, forCellWithReuseIdentifier: cellClass.es.reuseIdentifier)
+        wrapper.register(cellClass, forCellWithReuseIdentifier: cellClass.easy.reuseIdentifier)
     }
     
     func register(nib: UINib?, for cellClass: UICollectionViewCell.Type) {
-        wrapper.register(nib, forCellWithReuseIdentifier: cellClass.es.reuseIdentifier)
+        wrapper.register(nib, forCellWithReuseIdentifier: cellClass.easy.reuseIdentifier)
     }
     
     func dequeueReusableCell<T: UICollectionViewCell>(cellClass: T.Type, for indexPath: IndexPath) -> T? {
-        return wrapper.dequeueReusableCell(withReuseIdentifier: cellClass.es.reuseIdentifier, for: indexPath) as? T
+        return wrapper.dequeueReusableCell(withReuseIdentifier: cellClass.easy.reuseIdentifier, for: indexPath) as? T
        
     }
 

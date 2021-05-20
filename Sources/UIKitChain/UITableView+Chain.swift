@@ -256,7 +256,7 @@ public extension Chain where Base: UITableView {
     @available(iOS 6.0, *)
     @discardableResult func register(_ cellClass: UITableViewCell.Type) -> Self {
         make {
-            $0.register(cellClass, forCellReuseIdentifier: cellClass.es.reuseIdentifier)
+            $0.register(cellClass, forCellReuseIdentifier: cellClass.easy.reuseIdentifier)
         }
     }
     

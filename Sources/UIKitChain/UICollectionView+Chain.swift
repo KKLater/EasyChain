@@ -62,7 +62,7 @@ public extension Chain where Base: UICollectionView {
     
     @discardableResult func register(_ cellClass: UICollectionViewCell.Type) -> Self {
         make {
-            $0.register(cellClass, forCellWithReuseIdentifier: cellClass.es.reuseIdentifier)
+            $0.register(cellClass, forCellWithReuseIdentifier: cellClass.easy.reuseIdentifier)
         }
     }
 

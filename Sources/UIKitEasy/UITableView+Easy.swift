@@ -11,19 +11,19 @@ import EasyChainCore
 public extension Easy where Base: UITableView {
        
     func register(cellClass: UITableViewCell.Type) {
-        wrapper.register(cellClass, forCellReuseIdentifier: cellClass.es.reuseIdentifier)
+        wrapper.register(cellClass, forCellReuseIdentifier: cellClass.easy.reuseIdentifier)
     }
     
     func register(nib: UINib?, for cellClass: UITableViewCell.Type) {
-        wrapper.register(nib, forCellReuseIdentifier: cellClass.es.reuseIdentifier)
+        wrapper.register(nib, forCellReuseIdentifier: cellClass.easy.reuseIdentifier)
     }
     
     func dequeueReusableCell<T: UITableViewCell>(cellClass: UITableViewCell.Type?, for indexPath: IndexPath? = nil) -> T? {
         guard let cls = cellClass else { return nil }
         if let indexPath = indexPath {
-            return wrapper.dequeueReusableCell(withIdentifier: cls.es.reuseIdentifier, for: indexPath) as? T
+            return wrapper.dequeueReusableCell(withIdentifier: cls.easy.reuseIdentifier, for: indexPath) as? T
         } else {
-            return wrapper.dequeueReusableCell(withIdentifier: cls.es.reuseIdentifier) as? T
+            return wrapper.dequeueReusableCell(withIdentifier: cls.easy.reuseIdentifier) as? T
         }
     }
     

@@ -643,10 +643,10 @@ public extension Chain where Base: UIView {
 public extension Chain where Base: UIView {
 
     @discardableResult func cornerMode(_ cornerMode: UIView.CornerMode?) -> Self {
-        make { $0.es.cornerMode = cornerMode }
+        make { $0.easy.cornerMode = cornerMode }
     }
     
     @discardableResult func shadowMode(_ shadowMode: UIView.ShadowMode?) -> Self {
-        make { $0.es.shadowMode = shadowMode }
+        make { $0.easy.shadowMode = shadowMode }
     }
 }

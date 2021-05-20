@@ -13,7 +13,7 @@ import EasyChainCore
 public extension Easy where Base: UIWindow {
 
     var isMain: Bool {
-        return UIApplication.es.mainWindow == wrapper
+        return UIApplication.easy.mainWindow == wrapper
     }
 }
 

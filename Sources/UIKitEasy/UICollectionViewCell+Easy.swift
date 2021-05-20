@@ -16,7 +16,7 @@ public extension Easy where Base: UICollectionViewCell {
     }
     
     var reuseIdentifier: String {
-        return Base.es.reuseIdentifier
+        return Base.easy.reuseIdentifier
     }
 }
 

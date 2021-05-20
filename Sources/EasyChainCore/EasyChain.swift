@@ -39,8 +39,8 @@ public extension Easy {
 
 public protocol EasyCompatible {}
 public extension EasyCompatible {
-    var es: Easy<Self> { return Easy(self) }
-    static var es: Easy<Self>.Type { Easy<Self>.self }
+    var easy: Easy<Self> { return Easy(self) }
+    static var easy: Easy<Self>.Type { Easy<Self>.self }
 }
 
 
